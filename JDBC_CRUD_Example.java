@@ -5,19 +5,16 @@ public class JDBC_CRUD_Example {
     // Step 1: Database URL, Username, Password
     static final String URL = "jdbc:mysql://localhost:3306/studentdb";
     static final String USER = "root";
-    static final String PASSWORD = "your_mysql_password";
+    static final String PASSWORD = "root";
 
     public static void main(String[] args) {
 
         try {
-            // Step 2: Load MySQL JDBC Driver
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // Step 3: Establish Connection
             Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
             System.out.println("Connected to Database Successfully!");
 
-            // Step 4: Perform CRUD Operations
             insertStudent(conn, 1, "John", 20);
             insertStudent(conn, 2, "Emma", 22);
 
@@ -31,7 +28,6 @@ public class JDBC_CRUD_Example {
 
             readStudents(conn);
 
-            // Step 5: Close Connection
             conn.close();
 
         } catch (SQLException e) {
@@ -41,7 +37,6 @@ public class JDBC_CRUD_Example {
         }
     }
 
-    // Create Operation - Insert Data
     public static void insertStudent(Connection conn, int id, String name, int age) throws SQLException {
         String query = "INSERT INTO students VALUES (?, ?, ?)";
         PreparedStatement stmt = conn.prepareStatement(query);
@@ -52,7 +47,6 @@ public class JDBC_CRUD_Example {
         System.out.println(rows + " row(s) inserted.");
     }
 
-    // Read Operation - Retrieve Data
     public static void readStudents(Connection conn) throws SQLException {
         String query = "SELECT * FROM students";
         Statement stmt = conn.createStatement();
@@ -63,8 +57,7 @@ public class JDBC_CRUD_Example {
             System.out.println(rs.getInt("id") + " | " + rs.getString("name") + " | " + rs.getInt("age"));
         }
     }
-
-    // Update Operation - Modify Data
+    
     public static void updateStudent(Connection conn, int id, String newName) throws SQLException {
         String query = "UPDATE students SET name=? WHERE id=?";
         PreparedStatement stmt = conn.prepareStatement(query);
@@ -74,7 +67,6 @@ public class JDBC_CRUD_Example {
         System.out.println(rows + " row(s) updated.");
     }
 
-    // Delete Operation - Remove Data
     public static void deleteStudent(Connection conn, int id) throws SQLException {
         String query = "DELETE FROM students WHERE id=?";
         PreparedStatement stmt = conn.prepareStatement(query);
