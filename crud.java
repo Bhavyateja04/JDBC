@@ -2,7 +2,7 @@ import java.sql.*;
 
 public class JDBC_CRUD_Example {
 
-    // Step 1: Database URL, Username, Password
+     Step 1: Database URL, Username, Password
     static final String URL = "jdbc:mysql://localhost:3306/studentdb";
     static final String USER = "root";
     static final String PASSWORD = "your_mysql_password";
