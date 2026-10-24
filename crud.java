@@ -10,7 +10,6 @@ public class JDBC_CRUD_Example {
     public static void main(String[] args) {
 
         try {
-            // Step 2: Load MySQL JDBC Driver
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Step 3: Establish Connection
