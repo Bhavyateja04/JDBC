@@ -15,7 +15,6 @@ public class JDBC_CRUD_Example {
             Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
             System.out.println("Connected to Database Successfully!");
 
-            // Step 4: Perform CRUD Operations
             insertStudent(conn, 1, "John", 20);
             insertStudent(conn, 2, "Emma", 22);
 
