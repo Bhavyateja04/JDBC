@@ -28,7 +28,6 @@ public class JDBC_CRUD_Example {
 
             readStudents(conn);
 
-            // Step 5: Close Connection
             conn.close();
 
         } catch (SQLException e) {
