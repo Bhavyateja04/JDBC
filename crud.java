@@ -60,7 +60,6 @@ public class JDBC_CRUD_Example {
         }
     }
 
-    // Update Operation - Modify Data
     public static void updateStudent(Connection conn, int id, String newName) throws SQLException {
         String query = "UPDATE students SET name=? WHERE id=?";
         PreparedStatement stmt = conn.prepareStatement(query);
