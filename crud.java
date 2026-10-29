@@ -37,7 +37,6 @@ public class JDBC_CRUD_Example {
         }
     }
 
-    // Create Operation - Insert Data
     public static void insertStudent(Connection conn, int id, String name, int age) throws SQLException {
         String query = "INSERT INTO students VALUES (?, ?, ?)";
         PreparedStatement stmt = conn.prepareStatement(query);
