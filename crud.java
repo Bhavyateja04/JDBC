@@ -47,7 +47,6 @@ public class JDBC_CRUD_Example {
         System.out.println(rows + " row(s) inserted.");
     }
 
-    // Read Operation - Retrieve Data
     public static void readStudents(Connection conn) throws SQLException {
         String query = "SELECT * FROM students";
         Statement stmt = conn.createStatement();
