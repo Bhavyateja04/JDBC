@@ -66,8 +66,6 @@ public class JDBC_CRUD_Example {
         int rows = stmt.executeUpdate();
         System.out.println(rows + " row(s) updated.");
     }
-
-    // Delete Operation - Remove Data
     public static void deleteStudent(Connection conn, int id) throws SQLException {
         String query = "DELETE FROM students WHERE id=?";
         PreparedStatement stmt = conn.prepareStatement(query);
